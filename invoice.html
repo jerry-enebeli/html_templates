@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>A simple, clean, and responsive HTML invoice template</title>
+    
+    <style>
+    .invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color: #555;
+    }
+    
+    .invoice-box table {
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+    }
+    
+    .invoice-box table td {
+        padding: 5px;
+        vertical-align: top;
+    }
+    
+    .invoice-box table tr td:nth-child(2) {
+        text-align: right;
+    }
+    
+    .invoice-box table tr.top table td {
+        padding-bottom: 20px;
+    }
+    
+    .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+    }
+    
+    .invoice-box table tr.information table td {
+        padding-bottom: 40px;
+    }
+    
+    .invoice-box table tr.heading td {
+        background: #012154;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+        color: #fff;
+    }
+    
+    .invoice-box table tr.details td {
+        padding-bottom: 20px;
+    }
+    
+    .invoice-box table tr.item td{
+        border-bottom: 1px solid #eee;
+    }
+    
+    .invoice-box table tr.item.last td {
+        border-bottom: none;
+    }
+    
+    .invoice-box table tr.total td:nth-child(2) {
+        border-top: 1px solid #eee;
+        font-weight: bold;
+    }
+    .invoice-box table tr.total-top-bottom td:nth-child(2){
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        font-weight: bold;   
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+        
+        .invoice-box table tr.information table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+    }
+    
+    /** RTL **/
+    .rtl {
+        direction: rtl;
+        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    }
+    
+    .rtl table {
+        text-align: right;
+    }
+    
+    .rtl table tr td:nth-child(2) {
+        text-align: left;
+    }
+    .text-uppercase{
+        text-transform: uppercase;
+        font-weight: bolder;
+    }
+    .small-font{
+        font-size: 0.8em;
+    }
+    .text-uppercase-ordinary{
+        text-transform: uppercase;
+    }
+    .information-text{
+        font-size: 0.8em;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="">
+                                <img src="https://www.siggraph.org/wp-content/uploads/2012/12/org.flat_.logo_.400_0.jpg" style="width:100%; max-width:120px;">
+                                <p class="text-uppercase">Sample Company</p>
+                            </td>
+                            <td style="width: 50%"></td>
+                            <td class="small-font" style="text-align: left">
+                                <small class="text-uppercase" style="display: block;">Sample Company</small>
+                                <small> Company address line 1<br>
+                                Company address line 2<br>
+                                
+                                Company phone<br>
+                                Company email<br>
+                                </small>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <!--<td class="">
+                           
+                            </td>-->
+                            <td style="text-align: center;font-size: 1.5em;"><span class="text-uppercase" >invoice</span></td>
+                            <!--<td class="small-font" style="text-align: left">
+                               
+                            </td>-->
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information-text" style="border: solid 2px #333; ">
+                <td colspan="2">
+                <hr>
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="text-uppercase-ordinary">Bill To:</span><br>
+                                <span class="text-uppercase-ordinary"><strong>customer name</strong></span><br>
+                                Customer address line 1<br>
+                                Customer address line 2<br><br>
+                                Customer phone<br>
+                                Customer email
+                            </td>
+                            <td width="40%"></td>
+                            <td>
+                                <span class="text-uppercase-ordinary"><strong>invoice number</strong></span>&nbsp;&nbsp;INV0001<br>
+                                <span class="text-uppercase-ordinary"><strong>invoice date</strong></span>&nbsp;&nbsp;16/03/2019<br>
+                                <span class="text-uppercase-ordinary"><strong>due date</strong></span>&nbsp;&nbsp;15/05/2019<br>
+                                <span class="text-uppercase-ordinary"><strong>payment terms</strong></span>&nbsp;&nbsp;Due after fulfilment
+                            </td>
+                        </tr>
+                    </table>
+                <hr>
+                </td>
+            </tr>
+            
+            <tr class="item">
+                <td  width="100%" colspan="2">
+                     <table cellpadding="0" cellspacing="0">
+                         <tr class="heading" >
+                            <td class="text-uppercase-ordinary" width="30%">
+                                Item
+                            </td>
+                            
+                            <td width="20%" style="text-align: center">
+                                Quantity
+                            </td>
+                            <td class="text-uppercase-ordinary" width="30%" style="text-align: center">
+                                unit price
+                            </td>
+                             <td class="text-uppercase-ordinary" width="20%" style="text-align: center">
+                                amount
+                            </td>
+                        </tr>
+                        <tr class="item">
+                            <td width="30%">
+                                Invoice Item<br>
+                                Note on Invoice Item
+                            </td>
+                            
+                            <td width="20%" style="text-align: center">
+                                10
+                            </td>
+                             <td width="30%" style="text-align: center">
+                                #50.00
+                            </td>
+                             <td width="20%" style="text-align: center">
+                                #50.00
+                            </td>
+                        </tr>
+                        <tr class="item">
+                            <td width="30%">
+                                Invoice Item<br>
+                                Note on Invoice Item
+                            </td>
+                            
+                            <td width="20%" style="text-align: center">
+                                10
+                            </td>
+                             <td width="30%" style="text-align: center">
+                                #50.00
+                            </td>
+                             <td width="20%" style="text-align: center">
+                                #50.00
+                            </td>
+                        </tr>
+                        <tr class="item">
+                            <td width="30%">
+                                Invoice Item<br>
+                                Note on Invoice Item
+                            </td>
+                            
+                            <td width="20%" style="text-align: center">
+                                10
+                            </td>
+                             <td width="30%" style="text-align: center">
+                                #50.00
+                            </td>
+                             <td width="20%" style="text-align: center">
+                                #50.00
+                            </td>
+                        </tr>
+                         <tr class="item">
+                            <td width="30%">
+                                Invoice Item<br>
+                                Note on Invoice Item
+                            </td>
+                            
+                            <td width="20%" style="text-align: center">
+                                10
+                            </td>
+                             <td width="30%" style="text-align: center">
+                                #50.00
+                            </td>
+                             <td width="20%" style="text-align: center">
+                                #50.00
+                            </td>
+                        </tr>
+                     </table>
+                </td>
+            </tr>
+        </table>
+        <table >
+            <tr>
+              <td width="75%"></td>
+              <td width="25%">
+                  Subtotal: N4, 500, 000.00<br>
+                  VAT: N225, 000.00<br>
+              </td>   
+            </tr>
+            <tr class="total">
+                <td width="75%"></td>
+                
+                <td width="25%">
+                   Total: N4, 725, 000.00
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr class="total-top-bottom">
+                <td width="65%"></td>
+                
+                <td width="35%">
+                   Amount Due: N4, 725, 000.00
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td width="25%">Note:<br>
+                                Note line 1: <br>
+                                Note line 2: <br>
+                                Note line 3: <br></td>
+                
+                <td width="75%">
+                   
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
